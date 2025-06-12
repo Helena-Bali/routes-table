@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { Route } from './models/route.model';
 import { RouteService } from './services/route';
 import { ipToNumber } from './utils/ip.utils';
@@ -82,7 +81,14 @@ export class AppComponent {
       let result = 0;
       switch (column) {
         case 'address':
-          result = ipToNumber(a.address) - ipToNumber(b.address);
+          // Сначала сортируем по маске
+          const maskCompare = parseInt(a.mask) - parseInt(b.mask);
+          if (maskCompare !== 0) {
+            result = maskCompare;
+          } else {
+            // Если маски равны, сортируем по IP-адресу
+            result = ipToNumber(a.address) - ipToNumber(b.address);
+          }
           break;
         case 'gateway':
           result = ipToNumber(a.gateway) - ipToNumber(b.gateway);
