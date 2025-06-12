@@ -1,59 +1,63 @@
-# RoutesTableApp
+# Таблица маршрутов IPv4
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+Веб-приложение для отображения и сортировки таблицы маршрутов IPv4. Приложение разработано с использованием Angular 20 и поддерживает сортировку по IP-адресам, маскам подсети и интерфейсам.
 
-## Development server
+## Функциональность
 
-To start a local development server, run:
+- Отображение таблицы маршрутов IPv4
+- Сортировка по следующим полям:
+  - Адрес назначения (IP + маска)
+  - Шлюз
+  - Интерфейс
+- Поддержка сортировки по возрастанию и убыванию
+- Корректная сортировка IP-адресов с учетом масок подсети
+- Поддержка русских и английских названий интерфейсов
 
+## Технический стек
+
+- Angular 20
+- TypeScript
+- RxJS
+- HTML5/CSS3
+
+## Требования
+
+- Node.js (версия 18 или выше)
+- npm (версия 9 или выше)
+
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+```bash
+git clone [url-репозитория]
+cd routes-table-app
+```
+
+2. Установите зависимости:
+```bash
+npm install
+```
+
+3. Запустите приложение в режиме разработки:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Откройте браузер и перейдите по адресу `http://localhost:4200`
 
-## Code scaffolding
+## Особенности реализации
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Использование standalone компонентов Angular
+- Реактивный подход с использованием RxJS
+- Оптимизированная сортировка IP-адресов
+- Поддержка локализации (русский/английский языки)
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Сборка
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
+Для сборки проекта в production режиме:
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Собранные файлы будут находиться в директории `dist/`.
