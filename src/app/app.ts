@@ -1,6 +1,6 @@
-
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { RouterModule } from '@angular/router';
 import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -26,9 +26,9 @@ interface ViewModel {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule], 
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CommonModule, RouterModule], 
+  templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class AppComponent {
   private routeService = inject(RouteService);
